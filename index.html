@@ -21,8 +21,8 @@
 
         <div class='character-card'>
           <form>
-            <img src='' class='char-img' />
-            <span class='header'>Name</span>
+            <img src='' class='right char-img' />
+            <span class='heading'>Name</span>
             <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
             <br />
             <b>HC:</b> {{ highConcept }} <br />
@@ -37,7 +37,7 @@
             ////  SKILLS  ////
             ---->
 
-            <span class='header'>Skills</span>
+            <span class='heading'>Skills</span>
             <select>
               <option>Core</option>
               <option>FAE</option>
@@ -45,27 +45,68 @@
             </select><br />
 
             <b>+3</b> {{ +3skill }}
-            <input type='button' class='btn del-btn' value='-' />
-            <input type='button' class='btn add-btn' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' />
+            <input type='button' class='btn add-btn right' value='+' /><br />
             <b>+2</b> {{ +2skill }}
-            <input type='button' class='btn del-btn' value='-' />
-            <input type='button' class='btn add-btn' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' />
+            <input type='button' class='btn add-btn right' value='+' /><br />
             <b>+1</b> {{ +1skill }}
-            <input type='button' class='btn del-btn' value='-' />
-            <input type='button' class='btn add-btn' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' />
+            <input type='button' class='btn add-btn right' value='+' /><br />
             <b>&nbsp;&nbsp;0</b> {{ 0skill }}
-            <input type='button' class='btn del-btn' value='-' />
-            <input type='button' class='btn add-btn' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' />
+            <input type='button' class='btn add-btn right' value='+' /><br />
             <br />
 
             <!----
             ////  STUNTS  ////
             ---->
 
-            <span class='header'>Stunts</span><br />
+            <span class='heading'>Stunts</span><br />
             <b>{{ stunt.name }}</b>: {{ stunt.description }}
-            <input type='button' class='btn del-btn' value='-' />
-            <input type='button' class='btn add-btn' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' />
+            <input type='button' class='btn add-btn right' value='+' /><br />
+            <br />
+
+            <!----
+            ////  STRESS  ////
+            ---->
+
+            <span class='heading'>Stress</span><br />
+            <table class='stress-table'>
+              <tr>
+                <th width="50%">
+                  Physical
+                  <input type='button' class='btn add-btn' value='+' />
+                </th>
+                <th>
+                  Mental
+                  <input type='button' class='btn add-btn' value='+' />
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  1 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                  2 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                  3 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                  1 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                  2 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                  3 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
+                </td>
+              </tr>
+              <tr>
+                <th colspan=2>Consequences</th>
+              </tr>
+              <tr>
+                <td colspan=2 class='text-align: none'>
+                  {{ consequence }} 
+                  <input type='button' class='btn del-btn right' value='-' />
+                  <input type='button' class='btn add-btn right' value='+' /><br />
+                </td>
+              </tr>
+            </table>
 
             <!---<input type='text' placeholder='High concept' /><br />
             <input type='text' placeholder='Trouble' /><br />

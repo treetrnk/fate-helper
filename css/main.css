@@ -39,19 +39,23 @@ div {
   float: left;
   margin: 5px;
 }
-.header {
+.heading {
   font-size: 18pt;
   font-weight: bold;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
 }
 .char-img {
   width: 100px;
   height: 100px;
-  float: right;
 }
 .btn {
   width: 32px;
   height: 24px;
-  float: right;
   font-weight: bold;
 }
 .add-btn {
@@ -76,4 +80,11 @@ div {
   box-shadow:         3px 3px 5px #333;
   margin: 5px;
   cursor: pointer;
+}
+.stress-table {
+  width: 100%;
+  border: 0px;
+}
+.stress-table tr td {
+  text-align: center;
 }
