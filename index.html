@@ -1,4 +1,4 @@
-<html ng-app='fateHelperApp'>
+<html>
   <head>
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -6,15 +6,66 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
   <body> 
-    <div>
-      <form>
-        <h1>Name</h1>
-        <input type='text' placeholder='High concept' />
-        <input type='text' placeholder='Trouble' />
-        <input type='text' placeholder='Aspect' />
-        <input type='text' placeholder='Aspect' />
-        <input type='text' placeholder='Aspect' />
-      </form>
+
+    <div id='wrapper'>
+
+    <div id='header'>
+      <h1 id='title'>FATE Helper</h1>
     </div>
+
+    <div id='page'>
+
+      <div class='character-card'>
+        <form>
+          <img src='' class='char-img' />
+          <span class='header'>Name</span>
+          <!----<input type='button' class='btn edit-btn' value='&#8230;' />---->
+          <br />
+          <b>HC:</b> {{ highConcept }} <br />
+          <b>T:</b> {{ trouble }} 
+          <span ng-repeat=''>
+            
+          </span>
+          <input type='button' class='btn add-btn' value='+' /><br />
+          <br />
+
+          <span class='header'>Skills</span>
+          <select>
+            <option>Core</option>
+            <option>FAE</option>
+            <option>Custom</option>
+          </select><br />
+
+          <b>+3</b> {{ +3skills }}
+          <input type='button' class='btn add-btn' value='+' />
+          <input type='button' class='btn del-btn' value='&#10005;' /><br />
+          <b>+2</b> {{ +2skills }}
+          <input type='button' class='btn add-btn' value='+' />
+          <input type='button' class='btn del-btn' value='&#10005;' /><br />
+          <b>+1</b> {{ +1skills }}
+          <input type='button' class='btn add-btn' value='+' />
+          <input type='button' class='btn del-btn' value='&#10005;' /><br />
+          <b>&nbsp;&nbsp;0</b> {{ 0skills }}
+          <input type='button' class='btn add-btn' value='+' />
+          <input type='button' class='btn del-btn' value='&#10005;' /><br />
+          <br />
+
+          <span class='header'>Stunts</span>
+
+          <!----<input type='text' placeholder='High concept' /><br />
+          <input type='text' placeholder='Trouble' /><br />
+          <input type='text' placeholder='Aspect' /><br />
+          <input type='text' placeholder='Aspect' /><br />
+          <input type='text' placeholder='Aspect' />---->
+        </form>
+      </div>
+
+      <input type='button' class='btn add-btn big-add-btn' value='+'>
+
+    </div>
+
+    </div>
+
+
   </body>
 </html>

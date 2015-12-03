@@ -1,0 +1,90 @@
+body {
+  font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background: #888;
+}
+div {
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#wrapper {
+  height: 95vh;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#header {
+  background: #0a497a;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  line-height: 60px;
+}
+#title {
+  color: #FFF;
+  text-align: right;
+  font-family: Arial Black; Black; Black; Black;
+  margin: 10px;
+}
+#page {
+  width: 100%;
+  margin: 0px;
+  height: 90%;
+  padding: 10px;
+}
+.character-card {
+  width: 350px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 5px;
+  -moz-box-shadow:    3px 3px 5px #333;
+  -webkit-box-shadow: 3px 3px 5px #333;
+  box-shadow:         3px 3px 5px #333;
+  float: left;
+  margin: 5px;
+}
+.header {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.char-img {
+  width: 100px;
+  height: 100px;
+  float: right;
+}
+.btn {
+  font-size: 12pt;
+  width: 32px;
+}
+.add-btn {
+  color: #009900;
+  font-weight: bold;
+}
+.edit-btn {
+  color: #000099;
+}
+.del-btn {
+  color: #990000;
+  font-weight: bold;
+}
+.big-add-btn {
+  background: #ccc;
+  border: solid 0px;
+  width: 350px;
+  height: 100%;
+  float: left;
+  font-size: 250px;
+  border-radius: 5px;
+  -moz-box-shadow:    3px 3px 5px #333;
+  -webkit-box-shadow: 3px 3px 5px #333;
+  box-shadow:         3px 3px 5px #333;
+  margin: 5px;
+  cursor: pointer;
+}
