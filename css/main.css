@@ -15,17 +15,13 @@ div {
   margin-bottom: 0px;
 }
 #wrapper {
-  height: 95vh;
+  height: 92vh;
   width: 100%;
-  padding: 0px;
-  margin: 0px;
 }
 #header {
   background: #0a497a;
   width: 100%;
-  padding: 0px;
-  margin: 0px;
-  line-height: 60px;
+  line-height: 75px;
 }
 #title {
   color: #FFF;
@@ -35,7 +31,6 @@ div {
 }
 #page {
   width: 100%;
-  margin: 0px;
   height: 90%;
   padding: 10px;
 }
@@ -60,19 +55,19 @@ div {
   float: right;
 }
 .btn {
-  font-size: 12pt;
   width: 32px;
+  height: 24px;
+  float: right;
+  font-weight: bold;
 }
 .add-btn {
   color: #009900;
-  font-weight: bold;
 }
 .edit-btn {
   color: #000099;
 }
 .del-btn {
   color: #990000;
-  font-weight: bold;
 }
 .big-add-btn {
   background: #ccc;
