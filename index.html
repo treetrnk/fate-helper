@@ -9,19 +9,19 @@
     <div id='wrapper'>
 
 
-        <table id='header' cellpadding=0 cellspacing=0 border=0>
-          <tr>
-            <td> &nbsp; </td>
-            <td class='tab'>
-              <span class='tab-text'>{{ tab.name }}</span>
-              <span class='tab-text'>{{ tab.name2 }}</span>
-            </td>
-            <td> &nbsp; </td>
-            <td align='right'>
-              <h1 id='title'>FATE Helper</h1>
-            </td>
-          </tr>
-        </table>
+      <table id='header' cellpadding=0 cellspacing=0 border=0>
+        <tr>
+          <td> &nbsp; </td>
+          <td class='tab'>
+            <span class='tab-text'>{{ tab.name }}</span>
+            <span class='tab-text'>{{ tab.name2 }}</span>
+          </td>
+          <td> &nbsp; </td>
+          <td align='right'>
+            <h1 id='title'>FATE Helper</h1>
+          </td>
+        </tr>
+      </table>
 
       <div id='page'>
 
@@ -30,30 +30,33 @@
         ---->
 
         <div class='character-card'>
-          <form>
-            <img src='' class='right char-img' />
-            <span class='heading'>Name</span>
-            <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
-            <br />
-            <b>HC:</b> {{ highConcept }} <br />
-            <b>T:</b> {{ trouble }} 
-            <span ng-repeat=''>
-              
-            </span>
-            <input type='button' class='btn add-btn' value='+' /><br />
-            <br />
+          <img src='' class='right char-img' />
+          <span class='heading'>Name</span>
+          <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
+          <br />
+          <b>HC:</b> {{ highConcept }} <br />
+          <b>T:</b> {{ trouble }} 
+          <span ng-repeat=''>
+            
+          </span>
+          <input type='button' class='btn add-btn' value='+' /><br />
+          <br />
 
-            <!----
-            ////  SKILLS  ////
-            ---->
+          <!----
+          ////  SKILLS  ////
+          ---->
 
+          <div class='category'>
+            <span class='right'>&#9660;</span>
             <span class='heading'>Skills</span>
             <select>
               <option>Core</option>
               <option>FAE</option>
               <option>Custom</option>
             </select><br />
+          </div>
 
+          <div class='content'>
             <b>+3</b> {{ +3skill }}
             <input type='button' class='btn del-btn right' value='-' />
             <input type='button' class='btn add-btn right' value='+' /><br />
@@ -67,22 +70,34 @@
             <input type='button' class='btn del-btn right' value='-' />
             <input type='button' class='btn add-btn right' value='+' /><br />
             <br />
+          </div>
 
-            <!----
-            ////  STUNTS  ////
-            ---->
+          <!----
+          ////  STUNTS  ////
+          ---->
 
+          <div class='category'>
+            <span class='right'>&#9660;</span>
             <span class='heading'>Stunts</span><br />
+          </div>
+
+          <div class='content'>
             <b>{{ stunt.name }}</b>: {{ stunt.description }}
             <input type='button' class='btn del-btn right' value='-' />
             <input type='button' class='btn add-btn right' value='+' /><br />
             <br />
+          </div>
 
-            <!----
-            ////  STRESS  ////
-            ---->
+          <!----
+          ////  STRESS  ////
+          ---->
 
+          <div class='category'>
+            <span class='right'>&#9660;</span>
             <span class='heading'>Stress</span><br />
+          </div>
+
+          <div class='content'>
             <table class='stress-table'>
               <tr>
                 <th width="50%">
@@ -117,13 +132,14 @@
                 </td>
               </tr>
             </table>
+            <br />
+          </div>
 
-            <!---<input type='text' placeholder='High concept' /><br />
-            <input type='text' placeholder='Trouble' /><br />
-            <input type='text' placeholder='Aspect' /><br />
-            <input type='text' placeholder='Aspect' /><br />
-            <input type='text' placeholder='Aspect' />--->
-          </form>
+          <!---<input type='text' placeholder='High concept' /><br />
+          <input type='text' placeholder='Trouble' /><br />
+          <input type='text' placeholder='Aspect' /><br />
+          <input type='text' placeholder='Aspect' /><br />
+          <input type='text' placeholder='Aspect' />--->
         </div>
 
         <input type='button' class='btn add-btn big-add-btn' value='+'>

@@ -33,21 +33,6 @@ div {
   padding: 10px;
   overflow-x: auto;
 }
-.character-card {
-  width: 350px;
-  background: #FFFFFF;
-  border-radius: 5px;
-  padding: 5px;
-  -moz-box-shadow:    3px 3px 5px #333;
-  -webkit-box-shadow: 3px 3px 5px #333;
-  box-shadow:         3px 3px 5px #333;
-  float: left;
-  margin: 5px;
-}
-.heading {
-  font-size: 18pt;
-  font-weight: bold;
-}
 .al-right {
   text-align: right;
 }
@@ -62,6 +47,30 @@ div {
 }
 .left {
   float: left;
+}
+.character-card {
+  width: 350px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding: 5px;
+  -moz-box-shadow:    3px 3px 5px #333;
+  -webkit-box-shadow: 3px 3px 5px #333;
+  box-shadow:         3px 3px 5px #333;
+  float: left;
+  margin: 5px;
+  max-height: 100%;
+}
+.category {
+  background: #ccc;
+  padding: 0px 5px 0px 5px;
+
+}
+.content {
+  overflow-y: auto;
+}
+.heading {
+  font-size: 18pt;
+  font-weight: bold;
 }
 .char-img {
   width: 100px;
@@ -116,5 +125,5 @@ div {
   vertical-align: baseline;
   margin-top 100%;
   border-bottom: solid 3px #888;
-  border-radius: 5px;
+  border-radius: 10px 10px 0px 0px;
 }
