@@ -71,7 +71,7 @@ div {
 
 }
 .content {
-  max-height: 18vh;
+  max-height: 15vh;
   overflow-y: auto;
 }
 .heading {
@@ -114,9 +114,6 @@ div {
   width: 100%;
   border: 0px;
 }
-.stress-table tr td {
-  text-align: center;
-}
 .tab {
   vertical-align: bottom;
 }
@@ -124,7 +121,7 @@ div {
   background: #333;
   /*background: #666; for unselected tabs */
   font-weight: bold;
-  color: #ccc;
+  color: #eee;
   margin-left: 5px;
   padding: 0px 5px 0px 5px;
   text-align: left;
@@ -134,4 +131,8 @@ div {
   border-right: solid 3px #555;
   border-bottom: solid 3px #333;
   border-radius: 10px 10px 0px 0px;
+}
+.inactive-tab {
+  background: #202020;
+  border-bottom: solid 3px #666;
 }
