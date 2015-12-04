@@ -55,7 +55,7 @@ div {
 }
 .character-card {
   width: 350px;
-  background: #FFFFFF;
+  background: #eee;
   border-radius: 5px;
   padding: 5px;
   -moz-box-shadow:    6px 6px 6px #111;
@@ -121,7 +121,7 @@ div {
   background: #333;
   /*background: #666; for unselected tabs */
   font-weight: bold;
-  color: #fff;
+  color: #ccc;
   margin-left: 5px;
   padding: 0px 5px 0px 5px;
   text-align: left;
