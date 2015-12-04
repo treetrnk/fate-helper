@@ -3,31 +3,35 @@ html, body {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   background: #888;
-  height: 98%;
+  height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 div {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 #wrapper {
-  height: 99%;
+  height: 100%;
   width: 100%;
 }
 #header {
   background: #0a497a;
   width: 100%;
+  height: 75px;
+  border-bottom: solid 3px #ccc;
 }
 #title {
   color: #FFF;
   font-family: Arial Black; Black; Black; Black;
   margin: 0px 20px 0px 20px;
-  line-height: 75px;
+  vertical-align: middle;
 }
 #page {
   width: 100%;
   height: 90%;
   padding: 10px;
+  overflow-x: auto;
 }
 .character-card {
   width: 350px;
@@ -99,11 +103,18 @@ div {
   text-align: center;
 }
 .tab {
+  vertical-align: bottom;
+}
+.tab-text {
   background: #888;
   /*background: #666; for unselected tabs */
   font-weight: bold;
-  margin-right: auto;
   margin-left: 5px;
-  text-align: center;
-  border: solid 3px #444;
+  padding: 0px 5px 0px 5px;
+  text-align: left;
+  border: solid 3px #ccc;
+  vertical-align: baseline;
+  margin-top 100%;
+  border-bottom: solid 3px #888;
+  border-radius: 5px;
 }
