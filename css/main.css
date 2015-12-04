@@ -1,27 +1,28 @@
-body {
+html, body {
   font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   background: #888;
+  height: 98%;
+  width: 100%;
 }
 div {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 #wrapper {
-  height: 92vh;
+  height: 99%;
   width: 100%;
 }
 #header {
   background: #0a497a;
   width: 100%;
-  line-height: 75px;
 }
 #title {
   color: #FFF;
-  text-align: right;
   font-family: Arial Black; Black; Black; Black;
-  margin: 10px;
+  margin: 0px 20px 0px 20px;
+  line-height: 75px;
 }
 #page {
   width: 100%;
@@ -42,6 +43,15 @@ div {
 .heading {
   font-size: 18pt;
   font-weight: bold;
+}
+.al-right {
+  text-align: right;
+}
+.al-left {
+  text-align: left;
+}
+.al-center {
+  text-align: center;
 }
 .right {
   float: right;
@@ -87,4 +97,13 @@ div {
 }
 .stress-table tr td {
   text-align: center;
+}
+.tab {
+  background: #888;
+  /*background: #666; for unselected tabs */
+  font-weight: bold;
+  margin-right: auto;
+  margin-left: 5px;
+  text-align: center;
+  border: solid 3px #444;
 }
