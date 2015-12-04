@@ -63,7 +63,6 @@ div {
   box-shadow:         6px 6px 6px #111;
   float: left;
   margin: 5px;
-  max-height: 100%;
   border: solid 2px #999;
 }
 .category {
@@ -72,6 +71,7 @@ div {
 
 }
 .content {
+  max-height: 18vh;
   overflow-y: auto;
 }
 .heading {
@@ -79,8 +79,8 @@ div {
   font-weight: bold;
 }
 .char-img {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
 }
 .btn {
   width: 32px;
