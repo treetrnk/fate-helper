@@ -166,8 +166,8 @@
 
           <div class='content'>
             <b>{{ stunt.name }}</b>: {{ stunt.description }}
-            <input type='button' class='btn del-btn right' value='-' />
-            <input type='button' class='btn add-btn right' value='+' /><br />
+            <input type='button' class='btn del-btn right' value='-' /><br />
+            <input type='button' class='btn add-btn right' value='+' />
             <br />
           </div>
 
@@ -206,31 +206,34 @@
                   3 <input type='checkbox' />&nbsp;&nbsp;&nbsp;
                 </td>
               </tr>
-              <tr>
-                <th colspan=2>
-                  Consequences
-                  <input type='button' class='btn add-btn' value='+' />
-                </th>
-              </tr>
-              <tr>
-                <td colspan=2>
-                  <select>
-                    <option>10</option>
-                    <option>9</option>
-                    <option>8 Ext</option>
-                    <option>7</option>
-                    <option>6 Maj</option>
-                    <option>5</option>
-                    <option>4 Sig</option>
-                    <option>3</option>
-                    <option selected>2 Min</option>
-                    <option>1</option>
-                  </select>
-                  {{ consequence }} 
-                  <input type='button' class='btn del-btn right' value='-' /><br />
-                </td>
-              </tr>
             </table>
+          </div>
+              
+          <!----
+          ////  CONSEQUENCES  ////
+          ---->
+
+          <div class='category'>
+            <span class='right'>&#9660;</span>
+            <span class='heading'>Consequences</span><br />
+          </div>
+
+          <div class='content'>
+            <select>
+              <option>10</option>
+              <option>9</option>
+              <option>8 Ext</option>
+              <option>7</option>
+              <option>6 Maj</option>
+              <option>5</option>
+              <option>4 Sig</option>
+              <option>3</option>
+              <option selected>2 Min</option>
+              <option>1</option>
+            </select>
+            {{ consequence }} 
+            <input type='button' class='btn del-btn right' value='-' /><br />
+            <input type='button' class='btn add-btn right' value='+' />
             <br />
           </div>
 

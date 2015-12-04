@@ -114,6 +114,9 @@ div {
   width: 100%;
   border: 0px;
 }
+.stress-table tr td {
+  text-align: center;
+}
 .tab {
   vertical-align: bottom;
 }
