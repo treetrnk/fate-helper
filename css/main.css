@@ -53,6 +53,9 @@ div {
 .white {
   color: #fff;
 }
+.blue {
+  color: #0a497a;
+}
 .character-card {
   width: 350px;
   background: #eee;
@@ -66,9 +69,12 @@ div {
   border: solid 2px #999;
 }
 .category {
-  background: #ccc;
+  border-bottom: solid 2px #ccc;
   padding: 0px 5px 0px 5px;
 
+}
+.category:hover {
+  background: #ccc;
 }
 .content {
   max-height: 15vh;
