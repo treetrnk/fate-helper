@@ -58,6 +58,7 @@ div {
 }
 .character-card {
   width: 350px;
+  height: calc(100vh - 125px);
   background: #eee;
   border-radius: 5px;
   padding: 5px;
@@ -67,7 +68,10 @@ div {
   float: left;
   margin: 5px;
   border: solid 2px #999;
-  height: 95%;
+}
+.attributes {
+  height: calc(100% - 105px);
+  overflow-y: auto;
 }
 .category {
   border-bottom: solid 2px #ccc;
@@ -79,7 +83,6 @@ div {
   background: #ccc;
 }
 .content {
-  max-height: 15vh;
   overflow-y: auto;
 }
 .heading {
@@ -108,7 +111,7 @@ div {
   background: #ccc;
   border: solid 0px;
   width: 350px;
-  height: 95%;
+  height: calc(100vh - 125px);
   float: left;
   font-size: 250px;
   border-radius: 5px;
