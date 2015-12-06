@@ -81,6 +81,7 @@ div {
 }
 .category:hover {
   background: #ccc;
+  cursor: pointer;
 }
 .content {
   overflow-y: auto;
@@ -97,11 +98,12 @@ div {
   width: 25px;
   height: 24px;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 5000px;
   border: solid 2px #fff;
   color: #ccc;
-  box-shadow: 0 0 3px #666;
+  box-shadow: 0 0 3px #000;
   line-height: 15px;
+  cursor: pointer;
 }
 .add-btn {
   background: #009900;
@@ -113,17 +115,12 @@ div {
   background: #990000;
 }
 .big-add-btn {
-  background: #ccc;
-  border: solid 0px;
-  width: 350px;
-  height: calc(100vh - 125px);
+  border: solid 6px #fff;
+  width: 100px;
+  height: 100px;
   float: left;
-  font-size: 250px;
-  border-radius: 5px;
-  -moz-box-shadow:    3px 3px 5px #333;
-  -webkit-box-shadow: 3px 3px 5px #333;
-  box-shadow:         3px 3px 5px #333;
-  margin: 5px;
+  font-size: 100px;
+  margin: 5px 5px 5px 25px;
   cursor: pointer;
 }
 .stress-table {
@@ -147,6 +144,7 @@ div {
   border-right: solid 3px #555;
   border-bottom: solid 3px #333;
   border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
 }
 .inactive-tab {
   background: #202020;
