@@ -35,8 +35,9 @@
 
         <div ng-controller="CardController as card" class='character-card'>
           <img src='' class='right char-img' />
-          <span class='heading blue' ng-click='card.edit($index)' ng-hide='false'>{{card.name}}</span>
-          <form ng-submit='card.update()'>
+          <span class='heading blue' ng-click='card.edit($index)' 
+            ng-hide='false'>{{card.name}}</span>
+          <form ng-submit='card.update()' ng-hide='true'>
             <input type='text' placeholder='Enter a name' ng-model='cardName' 
               ng-hide="$card.hide['name']" />
             <input type='submit' class='btn add-btn right' value='+' /><br />
@@ -57,7 +58,7 @@
           <div class='attributes'>
 
           <div class='category' ng-click="card.toggle('aspects')">
-            <span class='right blue'>{{card.hide['aspects']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['aspects']['arrow']}}</span>
             <span class='heading blue'>Aspects</span>
           </div>
 
@@ -84,7 +85,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle('skills')">
-            <span class='right blue'>{{card.hide['skills']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['skills']['arrow']}}</span>
             <span class='heading blue'>Skills</span><br />
           </div>
 
@@ -124,7 +125,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle('stunts')">
-            <span class='right blue'>{{card.hide['stunts']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['stunts']['arrow']}}</span>
             <span class='heading blue'>Stunts</span><br />
           </div>
 
@@ -142,7 +143,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle('extras')">
-            <span class='right blue'>{{card.hide['extras']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['extras']['arrow']}}</span>
             <span class='heading blue'>Extras</span><br />
           </div>
 
@@ -156,7 +157,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle('stress')">
-            <span class='right blue'>{{card.hide['stress']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['stress']['arrow']}}</span>
             <span class='heading blue'>Stress</span><br />
           </div>
 
@@ -195,7 +196,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle('consequences')">
-            <span class='right blue'>{{card.hide['consequences']['arrow']}}</span>
+            <span class='right blue arrow'>{{card.hide['consequences']['arrow']}}</span>
             <span class='heading blue'>Consequences</span><br />
           </div>
 
