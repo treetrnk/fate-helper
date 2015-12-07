@@ -76,7 +76,7 @@ angular.module('fateHelper', [])
         $card.aspects.push({type: $card.aspectType, name: $card.aspectName});
         $card.aspectName = '';
         $card.aspectType = '';
-      }
+      };
     };
 
     $card.removeAspect = function(index) {
@@ -84,9 +84,11 @@ angular.module('fateHelper', [])
     };
 
     $card.addSkill = function() {
-      $card.skills.push({level: $card.skillLevel, name: $card.skillName});
-      $card.skillName = '';
-      $card.skillLevel = '';
+      if ($card.skillName.length && $card.skillLevel.length) {
+        $card.skills.push({level: $card.skillLevel, name: $card.skillName});
+        $card.skillName = '';
+        $card.skillLevel = '';
+      };
     };
 
     $card.removeSkill = function(index) {
