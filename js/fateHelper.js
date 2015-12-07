@@ -20,12 +20,12 @@ angular.module('fateHelper', [])
     ];
 
     $card.hide = {
-      aspects: false,
-      skills: false,
-      stunts: false,
-      extras: false,
-      stress: false,
-      consequences: false,
+      aspects: true,
+      skills: true,
+      stunts: true,
+      extras: true,
+      stress: true,
+      consequences: true,
     }
 
     $card.arrow = {
@@ -72,9 +72,11 @@ angular.module('fateHelper', [])
     };*/
 
     $card.addAspect = function() {
-      $card.aspects.push({type: $card.aspectType, name: $card.aspectName});
-      $card.aspectName = '';
-      $card.aspectType = '';
+      if ($card.aspectName.length) {
+        $card.aspects.push({type: $card.aspectType, name: $card.aspectName});
+        $card.aspectName = '';
+        $card.aspectType = '';
+      }
     };
 
     $card.removeAspect = function(index) {
