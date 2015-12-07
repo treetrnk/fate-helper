@@ -151,12 +151,12 @@
           ////  STUNTS  ////
           ---->
 
-          <div class='category'>
-            <span class='right blue'>&#9660;</span>
+          <div class='category' ng-click="card.toggle(stunts)">
+            <span class='right blue'>&#{{card.arrow['stunts']}};</span>
             <span class='heading blue'>Stunts</span><br />
           </div>
 
-          <div class='content'>
+          <div class='content' ng-hide="card.hide[stunts]">
             <span ng-repeat='stunt in card.stunts'>
               <b>{{stunt.name}}</b>: {{stunt.description}}
             <input type='button' class='btn del-btn right' value='-' /><br />
@@ -169,12 +169,12 @@
           ////  STRESS  ////
           ---->
 
-          <div class='category'>
+          <div class='category' ng-click="card.toggle(stress)">
             <span class='right blue'>&#9660;</span>
             <span class='heading blue'>Stress</span><br />
           </div>
 
-          <div class='content'>
+          <div class='content' ng-hide="card.hide[stunts]">
             <table class='stress-table'>
               <tr>
                 <th width="50%">
@@ -208,12 +208,12 @@
           ////  CONSEQUENCES  ////
           ---->
 
-          <div class='category'>
+          <div class='category' ng-click="card.toggle(stunts)">
             <span class='right blue'>&#9660;</span>
             <span class='heading blue'>Consequences</span><br />
           </div>
 
-          <div class='content'>
+          <div class='content' ng-hide="card.hide[stunts]">
             <select>
               <option>10</option>
               <option>9</option>
