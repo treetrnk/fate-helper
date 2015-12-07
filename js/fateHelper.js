@@ -7,9 +7,7 @@ angular.module('fateHelper', [])
     $card.trouble = 'Trouble';
     $card.aspects = [];
     $card.skills = [];
-    $card.stunts = [
-      {name: 'Name', description: 'Description'}
-    ];
+    $card.stunts = [];
     $card.extras = 'List of extras';
     $card.pStress = [1, 2, 3];
     $card.mStress = [1, 2, 3];
@@ -41,7 +39,7 @@ angular.module('fateHelper', [])
         $card.hide[category]['arrow'] = "\u25b2";
       }
       console.log(category);
-      console.log(card.hide[category]);
+      console.log($card.hide[category]);
       return;
     };
 
@@ -67,6 +65,18 @@ angular.module('fateHelper', [])
 
     $card.removeSkill = function(index) {
       $card.skills.splice(index, 1);
+    };
+
+    $card.addStunt = function() {
+      if ($card.stuntDescription.length && $card.stuntName.length) {
+        $card.stunts.push({name: $card.stuntName, description: $card.stuntDescription});
+        $card.stuntName = '';
+        $card.stuntDescription = '';
+      };
+    };
+
+    $card.removeStunt = function(index) {
+      $card.stunts.splice(index, 1);
     };
 
     $card.edit = function(index) {

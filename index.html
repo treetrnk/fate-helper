@@ -131,10 +131,18 @@
 
           <div class='content' ng-hide="card.hide['stunts']['hide']">
             <span ng-repeat='stunt in card.stunts'>
-              <b>{{stunt.name}}</b>: {{stunt.description}}
-            <input type='button' class='btn del-btn right' value='-' /><br />
+              <form ng-submit='card.removeStunt($index)'>
+                <b>{{stunt.name}}</b>: {{stunt.description}}
+                <input type='submit' class='btn del-btn right' value='-' /><br />
+              </form>
             </span>
-            <input type='button' class='btn add-btn right' value='+' /><br />
+            <form ng-submit='card.addStunt()'>
+              <input type='text' placeholder='Stunt name' 
+                ng-model='card.stuntName' size=10 />
+              <input type='text' placeholder='Stunt description' 
+                ng-model='card.stuntDescription' size=15 />
+              <input type='submit' class='btn add-btn right' value='+' /><br />
+            </form>
             <br />
           </div>
 
