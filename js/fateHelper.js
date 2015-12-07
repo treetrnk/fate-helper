@@ -85,8 +85,8 @@ angular.module('fateHelper', [])
 
     $card.addSkill = function() {
       $card.skills.push({level: $card.skillLevel, name: $card.skillName});
-      $card.aspectName = '';
-      $card.aspectType = '';
+      $card.skillName = '';
+      $card.skillLevel = '';
     };
 
     $card.removeSkill = function(index) {

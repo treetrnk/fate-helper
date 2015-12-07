@@ -84,12 +84,12 @@
           <div class='content' ng-hide="card.hide['skills']">
             <span ng-repeat='skill in card.skills'>
               <form ng-submit="card.removeSkill($index)">
-                <b>{{skill.level}}</b> {{skill.name}}
+                <b>{{skill.level}}</b>  - {{skill.name}}
                 <input type='submit' class='btn del-btn right' value='-' /><br />
               </form>
             </span>
             <form ng-submit='card.addSkill()'>
-              <select ng-model='skillLevel'>
+              <select ng-model='card.skillLevel'>
                 <option>+9</option>
                 <option>+8</option>
                 <option>+7</option>
@@ -106,7 +106,7 @@
               </select>
               <input type='text' 
                 placeholder='Add skills (skill, skill, skill)' 
-                ng-model='skillName' />
+                ng-model='card.skillName' />
               <input type='submit' class='btn add-btn right' value='+' /><br />
             </form>
             <br />
