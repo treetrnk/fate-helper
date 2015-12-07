@@ -55,10 +55,10 @@
           </div>
 
           <div class='content' ng-hide="card.hide[aspects]">
-            <form ng-submit='card.removeAspect()'>
+            <form ng-submit='card.removeAspect($index)'>
               <span ng-repeat='aspect in card.aspects'>
               <b>{{aspect.name}}</b> {{aspect.type}}
-              <input type='button' class='btn del-btn right' value='-' /><br />
+              <input type='submit' class='btn del-btn right' value='-' /><br />
             </form>
             </span>
             <form ng-submit='card.addAspect()'>

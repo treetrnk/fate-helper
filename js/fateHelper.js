@@ -79,6 +79,10 @@ angular.module('fateHelper', [])
       $card.aspectType = '';
     };
 
+    $card.removeAspect = function(index) {
+      $card.aspects.splice(index, 1);
+    };
+
 
     $card.edit = function() {
       
