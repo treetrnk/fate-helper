@@ -55,16 +55,21 @@
           </div>
 
           <div class='content' ng-hide="card.hide[aspects]">
-            <span ng-repeat='aspect in card.aspects'>
-            <select>
-              <option selected></option>
-              <option>Sit.</option>
-            </select>
-            {{aspect.name}}
-            <input type='button' class='btn del-btn right' value='-' /><br />
+            <form ng-submit='card.removeAspect()'>
+              <span ng-repeat='aspect in card.aspects'>
+              <b>{{aspect.name}}</b> {{aspect.type}}
+              <input type='button' class='btn del-btn right' value='-' /><br />
+            </form>
             </span>
-            <input type='button' class='btn add-btn right' value='+' />
-            <br /><br />
+            <form ng-submit='card.addAspect()'>
+              <select ng-model='card.aspectType'>
+                <option selected value=''></option>
+                <option value='(Sit.)'>Sit.</option>
+              </select>
+              <input type='text' placeholder='Add a new aspect' ng-model='card.aspectName' />
+              <input type='submit' class='btn add-btn right' value='+' />
+            </form>
+            <br />
           </div>
 
           <!----

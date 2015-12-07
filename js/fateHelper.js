@@ -5,9 +5,7 @@ angular.module('fateHelper', [])
     $card.name = 'Name';
     $card.highConcept = 'High concept';
     $card.trouble = 'Trouble';
-    $card.aspects = [
-      {type: '', name: 'Name'}
-    ];
+    $card.aspects = [];
     $card.skills = [
       {level: '', text: ''}
     ];
@@ -41,6 +39,11 @@ angular.module('fateHelper', [])
       consequences: "\u25bc"
     }
 
+
+     /////////////////////
+    //    FUNCTIONS    //
+   /////////////////////
+
     $card.toggle = function(category) {
       $card.hide[category] = !$card.hide[category];
       if ($card.arrow[category] == "\u25b2") {
@@ -69,6 +72,13 @@ angular.module('fateHelper', [])
       console.log(card.hide[$category]);
       return;
     };*/
+
+    $card.addAspect = function() {
+      $card.aspects.push({type: $card.aspectType, name: $card.aspectName});
+      $card.aspectName = '';
+      $card.aspectType = '';
+    };
+
 
     $card.edit = function() {
       
