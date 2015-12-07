@@ -19,23 +19,14 @@ angular.module('fateHelper', [])
       {level: 6, text: ''}
     ];
 
-    $card.hide = {
-      aspects: true,
-      skills: true,
-      stunts: true,
-      extras: true,
-      stress: true,
-      consequences: true,
-    }
-
-    $card.arrow = {
-      aspects: "\u25bc",
-      skills: "\u25bc",
-      stunts: "\u25bc",
-      extras: "\u25bc",
-      stress: "\u25bc",
-      consequences: "\u25bc"
-    }
+    $card.hide = { 
+      aspects: {hide: true, arrow: "\u25b2"},
+      skills: {hide: true, arrow: "\u25b2"},
+      stunts: {hide: true, arrow: "\u25b2"},
+      extras: {hide: true, arrow: "\u25b2"},
+      stress: {hide: true, arrow: "\u25b2"},
+      consequences: {hide: true, arrow: "\u25b2"}
+    };
 
 
      /////////////////////
@@ -43,33 +34,16 @@ angular.module('fateHelper', [])
    /////////////////////
 
     $card.toggle = function(category) {
-      $card.hide[category] = !$card.hide[category];
-      if ($card.arrow[category] == "\u25b2") {
-        $card.arrow[category] = "\u25bc";
+      $card.hide[category]['hide'] = !$card.hide[category]['hide'];
+      if ($card.hide[category]['arrow'] == "\u25b2") {
+        $card.hide[category]['arrow'] = "\u25bc";
       } else {
-        $card.arrow[category] = "\u25b2";
+        $card.hide[category]['arrow'] = "\u25b2";
       }
-    };
-
-    /*$card.hide = { 
-      aspects: {hide: false, arrow: "&#9660;"},
-      skills: {hide: false, arrow: "&#9660;"},
-      stunts: {hide: false, arrow: "&#9660;"},
-      stress: {hide: false, arrow: "&#9660;"},
-      consequences: {hide: false, arrow: "&#9660;"}
-    };
-
-    $card.toggle = function($category) {
-      $card.hide[$category]['hide'] = !$card.hide[$category]['hide'];
-      if ($card.hide[$category]['arrow'] == "&#9660;") {
-        $card.hide[$category]['arrow'] = "&#9650;";
-      } else {
-        $card.hide[$category]['arrow'] = "&#9660;";
-      }
-      console.log($category);
-      console.log(card.hide[$category]);
+      console.log(category);
+      console.log(card.hide[category]);
       return;
-    };*/
+    };
 
     $card.addAspect = function() {
       if ($card.aspectName.length) {
@@ -95,7 +69,9 @@ angular.module('fateHelper', [])
       $card.skills.splice(index, 1);
     };
 
-    $card.edit = function() {
+    $card.edit = function(index) {
+      
+
       
     };
   });
