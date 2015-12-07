@@ -33,20 +33,20 @@ angular.module('fateHelper', [])
     }
 
     $card.arrow = {
-      aspects: '9660',
-      skills: '9660',
-      stunts: '9660',
-      extras: '9660',
-      stress: '9660',
-      consequences: '9660',
+      aspects: "\u25bc",
+      skills: "\u25bc",
+      stunts: "\u25bc",
+      extras: "\u25bc",
+      stress: "\u25bc",
+      consequences: "\u25bc"
     }
 
     $card.toggle = function(category) {
       $card.hide[category] = !$card.hide[category];
-      if ($card.arrow[category] == 9950) {
-        $card.arrow[category] = 9960;
+      if ($card.arrow[category] == "\u25b2") {
+        $card.arrow[category] = "\u25bc";
       } else {
-        $card.arrow[category] = 9950;
+        $card.arrow[category] = "\u25b2";
       }
     };
 

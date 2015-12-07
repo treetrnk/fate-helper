@@ -50,7 +50,7 @@
           <div class='attributes'>
 
           <div class='category' ng-click="card.toggle(aspects)">
-            <span class='right blue'>&#9660;</span>
+            <span class='right blue'>{{card.arrow['aspects']}}</span>
             <span class='heading blue'>Aspects</span>
           </div>
 
@@ -72,7 +72,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle(skills)">
-            <span class='right blue'>&#9660;</span>
+            <span class='right blue'>{{card.arrow['skills']}}</span>
             <span class='heading blue'>Skills</span><br />
           </div>
 
@@ -154,7 +154,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle(stunts)">
-            <span class='right blue'>&#{{card.arrow['stunts']}};</span>
+            <span class='right blue'>{{card.arrow['stunts']}}</span>
             <span class='heading blue'>Stunts</span><br />
           </div>
 
@@ -172,7 +172,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle(extras)">
-            <span class='right blue'>&#{{card.arrow['extras']}};</span>
+            <span class='right blue'>{{card.arrow['extras']}}</span>
             <span class='heading blue'>Extras</span><br />
           </div>
 
@@ -186,7 +186,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle(stress)">
-            <span class='right blue'>&#9660;</span>
+            <span class='right blue'>{{card.arrow['stress']}}</span>
             <span class='heading blue'>Stress</span><br />
           </div>
 
@@ -225,7 +225,7 @@
           ---->
 
           <div class='category' ng-click="card.toggle(stunts)">
-            <span class='right blue'>&#9660;</span>
+            <span class='right blue'>{{card.arrow['consequences']}}</span>
             <span class='heading blue'>Consequences</span><br />
           </div>
 
