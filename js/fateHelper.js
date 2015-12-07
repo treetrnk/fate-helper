@@ -6,9 +6,7 @@ angular.module('fateHelper', [])
     $card.highConcept = 'High concept';
     $card.trouble = 'Trouble';
     $card.aspects = [];
-    $card.skills = [
-      {level: '', text: ''}
-    ];
+    $card.skills = [];
     $card.stunts = [
       {name: 'Name', description: 'Description'}
     ];
@@ -83,6 +81,15 @@ angular.module('fateHelper', [])
       $card.aspects.splice(index, 1);
     };
 
+    $card.addSkill = function() {
+      $card.skills.push({level: $card.skillLevel, name: $card.skillName});
+      $card.aspectName = '';
+      $card.aspectType = '';
+    };
+
+    $card.removeSkill = function(index) {
+      $card.skills.splice(index, 1);
+    };
 
     $card.edit = function() {
       
