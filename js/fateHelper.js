@@ -26,6 +26,7 @@ angular.module('fateHelper', [])
       aspects: false,
       skills: false,
       stunts: false,
+      extras: false,
       stress: false,
       consequences: false,
     }
@@ -34,6 +35,7 @@ angular.module('fateHelper', [])
       aspects: '9660',
       skills: '9660',
       stunts: '9660',
+      extras: '9660',
       stress: '9660',
       consequences: '9660',
     }
