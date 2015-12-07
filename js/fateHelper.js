@@ -14,6 +14,7 @@ angular.module('fateHelper', [])
     $card.stunts = [
       {name: 'Name', description: 'Description'}
     ];
+    $card.extras = 'List of extras';
     $card.pStress = [1, 2, 3];
     $card.mStress = [1, 2, 3];
     $card.consequences = [
