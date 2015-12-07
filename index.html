@@ -47,18 +47,18 @@
           
           <div class='attributes'>
 
-          <div class='category'>
+          <div class='category' ng-click="card.toggle(aspects)">
             <span class='right blue'>&#9660;</span>
             <span class='heading blue'>Aspects</span>
           </div>
 
-          <div class='content'>
+          <div class='content' ng-hide="card.hide[aspects]">
             <span ng-repeat='aspect in card.aspects'>
             <select>
               <option selected></option>
               <option>Sit.</option>
             </select>
-            {{aspect.text}}
+            {{aspect.name}}
             <input type='button' class='btn del-btn right' value='-' /><br />
             </span>
             <input type='button' class='btn add-btn right' value='+' />
@@ -69,12 +69,12 @@
           ////  SKILLS  ////
           ---->
 
-          <div class='category'>
+          <div class='category' ng-click="card.toggle(skills)">
             <span class='right blue'>&#9660;</span>
             <span class='heading blue'>Skills</span><br />
           </div>
 
-          <div class='content'>
+          <div class='content' ng-hide="card.hide[skills]">
             <select>
               <option>+9</option>
               <option>+8</option>
@@ -157,8 +157,10 @@
           </div>
 
           <div class='content'>
-            <b>stunt.name</b>: stunt.description
+            <span ng-repeat='stunt in card.stunts'>
+              <b>{{stunt.name}}</b>: {{stunt.description}}
             <input type='button' class='btn del-btn right' value='-' /><br />
+            </span>
             <input type='button' class='btn add-btn right' value='+' /><br />
             <br />
           </div>

@@ -5,19 +5,27 @@ angular.module('fateHelper', [])
     card.highConcept = 'High concept';
     card.trouble = 'Trouble';
     card.aspects = [
-      {type: '', text: ''}];
+      {type: '', name: 'Name'}];
     card.skills = [
-      {text: '', level: ''}];
-    card.stunts = [];
-    card.stress = [
-      {level: 1, type: 'physical'},
-      {level: 2, type: 'physical'},
-      {level: 3, type: 'physical'},
-      {level: 1, type: 'mental'},
-      {level: 2, type: 'mental'},
-      {level: 3, type: 'mental'}];
+      {level: '', text: ''}];
+    card.stunts = [
+      {name: 'Name', description: 'Description'}];
+    card.pStress = [ 1, 2, 3];
+    card.mStress = [ 1, 2, 3];
     card.consequences = [
       {level: 2, text: ''}, 
       {level: 4, text: ''}, 
       {level: 6, text: ''}];
+    card.hide = { 
+      aspects: false,
+      skills: false,
+      stunts: false,
+      stress: false,
+      consequences: false};
+    card.toggle = function(category) {
+      card.hide[category] = !card.hide[category];
+    };
+    card.edit = function() {
+      
+    };
   });
