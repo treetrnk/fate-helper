@@ -34,6 +34,7 @@ div {
   height: 90%;
   padding: 10px;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .al-right {
   text-align: right;
@@ -137,7 +138,7 @@ div {
   font-weight: bold;
   color: #eee;
   margin-left: 5px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 15px 0px 15px;
   text-align: left;
   border: solid 3px #666;
   vertical-align: baseline;
@@ -150,8 +151,12 @@ div {
 .inactive-tab {
   background: #202020;
   border-bottom: solid 3px #666;
+  color: #777;
 }
 .arrow {
   font-size: 18pt;
   margin: 0px 1px 0px 0px;
+}
+.hidden {
+  display: none;
 }
