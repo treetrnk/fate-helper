@@ -16,6 +16,7 @@ angular.module('fateHelper', [])
       {level: 4, text: ''}, 
       {level: 6, text: ''}
     ];
+    $card.result = '';
 
     $card.hide = { 
       aspects: {hide: true, arrow: "\u25b2"},
@@ -30,6 +31,46 @@ angular.module('fateHelper', [])
      /////////////////////
     //    FUNCTIONS    //
    /////////////////////
+
+    function sleep(milliseconds) {
+      var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+          if ((new Date().getTime() - start) > milliseconds){
+            break;
+        };
+      };
+    };
+
+    $card.rollDice = function() {
+      var ladder = {
+        '4': "Great",
+        '3': "Good",
+        '2': "Fair",
+        '1': "Average",
+        '0': "Medioc.",
+        '-1': "Poor",
+        '-2': "Terrible",
+        '-3': "Horrible",
+        '-4': "Disastr."
+      };
+
+      var options = [-1, 0, 1];
+      var counter = 0;
+      var outcome = 0;
+      while (counter < 4) {
+        outcome += options[Math.floor(Math.random()*options.length)];
+        counter += 1;
+      };
+      if (outcome > -1) {
+        $card.result = "+" + outcome;
+      } else {
+        $card.result = outcome;
+      };
+
+      $card.result += " " + ladder[outcome];
+      console.log($card.result);
+      return;
+    };
 
     $card.toggle = function(category) {
       $card.hide[category]['hide'] = !$card.hide[category]['hide'];
@@ -84,4 +125,5 @@ angular.module('fateHelper', [])
 
       
     };
+
   });

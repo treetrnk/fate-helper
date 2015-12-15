@@ -8,13 +8,19 @@
     <script src="js/fateHelper.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
-  <body> 
+  <body ng-controller="CardController as card" > 
     <div id='wrapper'>
 
 
       <table id='header' cellpadding=0 cellspacing=0 border=0>
         <tr>
           <td> &nbsp; </td>
+          <td class='dice-roller'>
+            <form ng-submit='card.rollDice()'>
+              <input type='submit' value='Roll Dice' />
+              {{ card.result }}
+            </form>
+          </td>
           <td class='tab'>
             <span id='pc-tab' class='tab-text'>PCs</span>
             <span id='gm-tab' class='tab-text inactive-tab'>GM</span>
@@ -38,7 +44,7 @@
           ////  CHARACTER CARD  ////
           ---->
 
-          <div ng-controller="CardController as card" class='character-card'>
+          <div class='character-card'>
             <img src='' class='right char-img' />
             <span class='heading blue' ng-click='card.edit($index)' 
                ng-hide='{{}}'>{{card.name}}</span>
@@ -57,7 +63,6 @@
                 placeholder='High Concept' />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
-            <br />
 
             <form ng-submit='' ng-hide=''>
               <b>T:</b> <span ng-hide='{{}}'>{{card.trouble}}</span> 

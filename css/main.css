@@ -160,3 +160,12 @@ div {
 .hidden {
   display: none;
 }
+.dice-roller {
+  text-align: center;
+  width: 80px;
+  vertical-align: top;
+  padding-top: 13px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 11pt;
+}
