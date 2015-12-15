@@ -41,7 +41,7 @@
           <div ng-controller="CardController as card" class='character-card'>
             <img src='' class='right char-img' />
             <span class='heading blue' ng-click='card.edit($index)' 
-              ng-hide='false'>{{card.name}}</span>
+               ng-hide='{{}}'>{{card.name}}</span>
             <form ng-submit='card.update()' ng-hide='true'>
               <input type='text' placeholder='Enter a name' ng-model='cardName' 
                 ng-hide="$card.hide['name']" />
@@ -51,8 +51,19 @@
 
             <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
             <br />
-            <b>HC:</b> {{card.highConcept}} <br />
-            <b>T:</b> {{card.trouble}} 
+            <form ng-submit='' ng-hide=''>
+              <b>HC:</b> <span ng-hide='{{}}'>{{card.highConcept}}</span> 
+              <input type='text' value='{{card.highConcept}}' 
+                placeholder='High Concept' />
+              <input type='submit' class='btn add-btn right' value='+' />
+            </form>
+            <br />
+
+            <form ng-submit='' ng-hide=''>
+              <b>T:</b> <span ng-hide='{{}}'>{{card.trouble}}</span> 
+              <input type='text' value='{{card.trouble}}' placeholder='Trouble' />
+              <input type='submit' class='btn add-btn right' value='+' />
+            </form>
             <br />
             <br />
 

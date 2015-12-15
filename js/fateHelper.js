@@ -3,8 +3,8 @@ angular.module('fateHelper', [])
     var $card = this;
     
     $card.name = 'Name';
-    $card.highConcept = 'High concept';
-    $card.trouble = 'Trouble';
+    $card.highConcept = '';
+    $card.trouble = '';
     $card.aspects = [];
     $card.skills = [];
     $card.stunts = [];
