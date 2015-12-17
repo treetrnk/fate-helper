@@ -44,13 +44,13 @@
           ////  CHARACTER CARD  ////
           ---->
 
-          <div class='character-card' ng-repeat='card in fate.card'>
+          <div class='character-card' ng-repeat='card in fate.cards'>
             <img src='' class='right char-img' />
             <span class='heading blue' ng-click='card.edit($index)' 
-               ng-hide='{{}}'>{{card['name']}}</span>
+        ng-hide="card['hide']['name']">{{ card['name'] }}</span>
             <form ng-submit='card.update()' ng-hide='true'>
               <input type='text' placeholder='Enter a name' ng-model='cardName' 
-                ng-hide="$card['hide']['name']" />
+                ng-hide="card['hide']['name']" />
               <input type='submit' class='btn add-btn right' value='+' /><br />
             </form>
 
@@ -58,15 +58,15 @@
             <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
             <br />
             <form ng-submit='' ng-hide=''>
-              <b>HC:</b> <span ng-hide='{{}}'>{{card['highConcept']}}</span> 
-              <input type='text' value='{{card['highConcept']}}' 
+              <b>HC:</b> <span ng-hide=''>{{ card['highConcept'] }}</span> 
+              <input type='text' value="{{card['highConcept']}}" 
                 placeholder='High Concept' />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
 
             <form ng-submit='' ng-hide=''>
-              <b>T:</b> <span ng-hide='{{}}'>{{card['trouble']}}</span> 
-              <input type='text' value='{{card['trouble']}}' placeholder='Trouble' />
+              <b>T:</b> <span ng-hide=''>{{ card['trouble'] }}</span> 
+              <input type='text' value="{{card['trouble']}}" placeholder='Trouble' />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
             <br />
@@ -78,20 +78,20 @@
             
             <div class='attributes'>
 
-            <div class='category' ng-click="fate.toggle(index, 'aspects')">
+            <div class='category' ng-click="fate.toggle(card, 'aspects')">
               <span class='right blue arrow'>{{card['hide']['aspects']['arrow']}}</span>
               <span class='heading blue'>Aspects</span>
 
             </div>
 
-            <div class='content' ng-hide="card['hide']['aspects']['hide']">
-              <form ng-submit='fate.removeAspect($index)'>
-                <span ng-repeat='aspect in card[aspects]'>
+            <div class='content' ng-hide="card.hide['aspects']['hide']">
+              <form ng-submit='fate.removeAspect(card, $index)'>
+                <span ng-repeat="aspect in card['aspects']">
                 <b>{{aspect['name']}}</b> {{aspect['type']}}
                 <input type='submit' class='btn del-btn right' value='-' /><br />
               </form>
               </span>
-              <form ng-submit='card.addAspect()'>
+              <form ng-submit='fate.addAspect(card)'>
                 <select ng-model='card.aspectType'>
                   <option selected value=''></option>
                   <option value='(Sit.)'>Sit.</option>
@@ -106,19 +106,19 @@
             ////  SKILLS  ////
             ---->
 
-            <div class='category' ng-click="card.toggle('skills')">
+            <div class='category' ng-click="fate.toggle(card, 'skills')">
               <span class='right blue arrow'>{{card.hide['skills']['arrow']}}</span>
               <span class='heading blue'>Skills</span><br />
             </div>
 
             <div class='content' ng-hide="card.hide['skills']['hide']">
               <span ng-repeat='skill in card.skills'>
-                <form ng-submit="card.removeSkill($index)">
+                <form ng-submit="fate.removeSkill(card, $index)">
                   <b>{{skill.level}}</b>  - {{skill.name}}
                   <input type='submit' class='btn del-btn right' value='-' /><br />
                 </form>
               </span>
-              <form ng-submit='card.addSkill()'>
+              <form ng-submit='fate.addSkill(card)'>
                 <select ng-model='card.skillLevel'>
                   <option>+9</option>
                   <option>+8</option>
@@ -146,19 +146,19 @@
             ////  STUNTS  ////
             ---->
 
-            <div class='category' ng-click="card.toggle('stunts')">
+            <div class='category' ng-click="fate.toggle(card, 'stunts')">
               <span class='right blue arrow'>{{card.hide['stunts']['arrow']}}</span>
               <span class='heading blue'>Stunts</span><br />
             </div>
 
             <div class='content' ng-hide="card.hide['stunts']['hide']">
               <span ng-repeat='stunt in card.stunts'>
-                <form ng-submit='card.removeStunt($index)'>
+                <form ng-submit='fate.removeStunt(card, $index)'>
                   <b>{{stunt.name}}</b>: {{stunt.description}}
                   <input type='submit' class='btn del-btn right' value='-' /><br />
                 </form>
               </span>
-              <form ng-submit='card.addStunt()'>
+              <form ng-submit='fate.addStunt(card)'>
                 <input type='text' placeholder='Stunt name' 
                   ng-model='card.stuntName' size=10 />
                 <input type='text' placeholder='Stunt description' 
@@ -172,7 +172,7 @@
             ////  EXTRAS  ////
             ---->
 
-            <div class='category' ng-click="card.toggle('extras')">
+            <div class='category' ng-click="fate.toggle(card, 'extras')">
               <span class='right blue arrow'>{{card.hide['extras']['arrow']}}</span>
               <span class='heading blue'>Extras</span><br />
             </div>
@@ -186,7 +186,7 @@
             ////  STRESS  ////
             ---->
 
-            <div class='category' ng-click="card.toggle('stress')">
+            <div class='category' ng-click="fate.toggle(card, 'stress')">
               <span class='right blue arrow'>{{card.hide['stress']['arrow']}}</span>
               <span class='heading blue'>Stress</span><br />
             </div>
@@ -225,7 +225,7 @@
             ////  CONSEQUENCES  ////
             ---->
 
-            <div class='category' ng-click="card.toggle('consequences')">
+            <div class='category' ng-click="fate.toggle(card, 'consequences')">
               <span class='right blue arrow'>{{card.hide['consequences']['arrow']}}</span>
               <span class='heading blue'>Consequences</span><br />
             </div>
@@ -257,8 +257,8 @@
             <input type='text' placeholder='Aspect' />--->
           </div>
 
-          <input type='button' class='btn add-btn big-add-btn' value='+'>
-          
+          <input type='button' class='btn add-btn big-add-btn' value='+'
+            ng-click="fate.addCard()" />
 
         </div>
         <div id='content-gm' class='hidden'></div>

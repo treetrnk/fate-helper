@@ -2,30 +2,33 @@ angular.module('fateHelper', [])
   .controller('FateController', function() {
     var $fate = this;
     
-    $fate.card = {
-      name: 'Name',
-      highConcept: '',
-      trouble: '',
-      aspects: [],
-      skills: [],
-      stunts: [],
-      extras: 'List of extras',
-      pStress: 3,
-      mStress: 3,
-      consequences: [
-        {level: 2, text: ''}, 
-        {level: 4, text: ''}, 
-        {level: 6, text: ''}
-      ],
-      hide:  { 
-        aspects: {hide: true, arrow: "\u25b2"},
-        skills: {hide: true, arrow: "\u25b2"},
-        stunts: {hide: true, arrow: "\u25b2"},
-        extras: {hide: true, arrow: "\u25b2"},
-        stress: {hide: true, arrow: "\u25b2"},
-        consequences: {hide: true, arrow: "\u25b2"}
+    $fate.cards = [
+      {
+        name: 'Name',
+        highConcept: '',
+        trouble: '',
+        aspects: [],
+        skills: [],
+        stunts: [],
+        extras: 'List of extras',
+        pStress: 3,
+        mStress: 3,
+        consequences: [
+          {level: 2, text: ''}, 
+          {level: 4, text: ''}, 
+          {level: 6, text: ''}
+        ],
+        hide:  { 
+          name: false,
+          aspects: {hide: true, arrow: "\u25b2"},
+          skills: {hide: true, arrow: "\u25b2"},
+          stunts: {hide: true, arrow: "\u25b2"},
+          extras: {hide: true, arrow: "\u25b2"},
+          stress: {hide: true, arrow: "\u25b2"},
+          consequences: {hide: true, arrow: "\u25b2"}
+        }
       }
-    };
+    ];
 
     $fate.ladder = {
       '4': "Great",
@@ -62,68 +65,93 @@ angular.module('fateHelper', [])
         counter += 1;
       };
       if (outcome > -1) {
-        $card.result = "+" + outcome;
+        $fate.result = "+" + outcome;
       } else {
-        $card.result = outcome;
+        $fate.result = outcome;
       };
 
-      $card.result += " " + $fate.ladder[outcome];
+      $fate.result += " " + $fate.ladder[outcome];
       console.log(result);
       return;
     };
 
-    $fate.toggle = function(index, category) {
-      $card.hide[category]['hide'] = !$card.hide[category]['hide'];
-      if ($card.hide[category]['arrow'] == "\u25b2") {
-        $card.hide[category]['arrow'] = "\u25bc";
+    $fate.toggle = function(card, category) {
+      card.hide[category]['hide'] = !card.hide[category]['hide'];
+      if (card.hide[category]['arrow'] == "\u25b2") {
+        card.hide[category]['arrow'] = "\u25bc";
       } else {
-        $card.hide[category]['arrow'] = "\u25b2";
+        card.hide[category]['arrow'] = "\u25b2";
       }
       console.log(category);
-      console.log($card.hide[category]);
+      console.log(card.hide[category]);
       return;
     };
 
-    $fate.addAspect = function() {
-      if ($card.aspectName.length) {
-        $card.aspects.push({type: $card.aspectType, name: $card.aspectName});
-        $card.aspectName = '';
-        $card.aspectType = '';
+    $fate.addAspect = function(card) {
+      if (card.aspectName.length) {
+        card.aspects.push({type: card.aspectType, name: card.aspectName});
+        card.aspectName = '';
+        card.aspectType = '';
       };
     };
 
-    $fate.removeAspect = function(index) {
-      $card.aspects.splice(index, 1);
+    $fate.removeAspect = function(card, index) {
+      card.aspects.splice(index, 1);
     };
 
-    $fate.addSkill = function() {
-      if ($card.skillName.length && $card.skillLevel.length) {
-        $card.skills.push({level: $card.skillLevel, name: $card.skillName});
-        $card.skillName = '';
-        $card.skillLevel = '';
+    $fate.addSkill = function(card) {
+      if (card.skillName.length && card.skillLevel.length) {
+        card.skills.push({level: card.skillLevel, name: card.skillName});
+        card.skillName = '';
+        card.skillLevel = '';
       };
     };
 
-    $fate.removeSkill = function(index) {
-      $fate.skills.splice(index, 1);
+    $fate.removeSkill = function(card, index) {
+      card.skills.splice(index, 1);
     };
 
-    $fate.addStunt = function() {
-      if ($card.stuntDescription.length && $card.stuntName.length) {
-        $card.stunts.push({name: $card.stuntName, description: $card.stuntDescription});
-        $card.stuntName = '';
-        $card.stuntDescription = '';
+    $fate.addStunt = function(card) {
+      if (card.stuntDescription.length && card.stuntName.length) {
+        card.stunts.push({name: card.stuntName, description: card.stuntDescription});
+        card.stuntName = '';
+        card.stuntDescription = '';
       };
     };
 
-    $fate.removeStunt = function(index) {
-      $card.stunts.splice(index, 1);
+    $fate.removeStunt = function(card, index) {
+      card.stunts.splice(index, 1);
+    };
+
+    $fate.addCard = function() {
+      $fate.cards.push({
+        name: '',
+        highConcept: '',
+        trouble: '',
+        aspects: [],
+        skills: [],
+        stunts: [],
+        extras: 'List of extras',
+        pStress: 3,
+        mStress: 3,
+        consequences: [
+          {level: 2, text: ''}, 
+          {level: 4, text: ''}, 
+          {level: 6, text: ''}
+        ],
+        hide:  { 
+          name: false,
+          aspects: {hide: true, arrow: "\u25b2"},
+          skills: {hide: true, arrow: "\u25b2"},
+          stunts: {hide: true, arrow: "\u25b2"},
+          extras: {hide: true, arrow: "\u25b2"},
+          stress: {hide: true, arrow: "\u25b2"},
+          consequences: {hide: true, arrow: "\u25b2"}
+        }
+      });
     };
 
     $fate.edit = function(index) {
-      
-
-      
     };
 
   });
