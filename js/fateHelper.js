@@ -31,15 +31,19 @@ angular.module('fateHelper', [])
     ];
 
     $fate.ladder = {
+      '8': "Legendary",
+      '7': "Epic",
+      '6': "Fantastic",
+      '5': "Superb",
       '4': "Great",
       '3': "Good",
       '2': "Fair",
       '1': "Average",
-      '0': "Medioc.",
+      '0': "Mediocre",
       '-1': "Poor",
       '-2': "Terrible",
       '-3': "Horrible",
-      '-4': "Disastr."
+      '-4': "Disastrous"
     };
 
 

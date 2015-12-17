@@ -21,6 +21,14 @@
               {{ fate.result }}
             </form>
           </td>
+          <td> &nbsp; </td>
+          <td rowspan=2 align='right'>
+            <h1 id='title'>FATE HELPER</h1>
+            <span class='white'>ROLEPLAYING GAME ORGANIZER</span>
+          </td>
+        </tr>
+        <tr>
+          <td> &nbsp; </td>
           <td class='tab'>
             <span id='pc-tab' class='tab-text'>PCs</span>
             <span id='gm-tab' class='tab-text inactive-tab'>GM</span>
@@ -29,10 +37,6 @@
             <span class='tab-text inactive-tab'>&nbsp; + &nbsp;</span>
           </td>
           <td> &nbsp; </td>
-          <td align='right'>
-            <h1 id='title'>FATE HELPER</h1>
-            <span class='white'>ROLEPLAYING GAME ORGANIZER</span>
-          </td>
         </tr>
       </table>
 
@@ -47,7 +51,7 @@
           <div class='character-card' ng-repeat='card in fate.cards'>
             <img src='' class='right char-img' />
             <span class='heading blue' ng-click='card.edit($index)' 
-        ng-hide="card['hide']['name']">{{ card['name'] }}</span>
+              ng-hide="card['hide']['name']">{{ card['name'] }}</span>
             <form ng-submit='card.update()' ng-hide='true'>
               <input type='text' placeholder='Enter a name' ng-model='cardName' 
                 ng-hide="card['hide']['name']" />
@@ -259,9 +263,11 @@
             <input type='text' placeholder='Aspect' /><br />
             <input type='text' placeholder='Aspect' />--->
           </div>
-
-          <input type='button' class='btn add-btn big-add-btn' value='+'
-            ng-click="fate.addCard()" />
+          
+          <form>
+            <input type='button' class='btn add-btn big-add-btn' value='+'
+              ng-click="fate.addCard()" />
+          </form>
 
         </div>
         <div id='content-gm' class='hidden'></div>

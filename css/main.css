@@ -34,7 +34,7 @@ div {
   max-height: 90%;
   padding: 10px;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .al-right {
   text-align: right;
@@ -161,10 +161,8 @@ div {
   display: none;
 }
 .dice-roller {
-  text-align: center;
-  width: 80px;
   vertical-align: top;
-  padding-top: 13px;
+  padding-top: 7px;
   font-weight: bold;
   color: #fff;
   font-size: 11pt;
