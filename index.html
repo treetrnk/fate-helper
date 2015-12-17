@@ -16,10 +16,13 @@
         <tr>
           <td> &nbsp; </td>
           <td class='dice-roller'>
-            <form ng-submit='fate.rollDice()'>
-              <input type='submit' value='Roll Dice' />
-              {{ fate.result }}
-            </form>
+            <input type='submit' value='Roll Dice' ng-click='fate.rollDice()' />
+            <table class='dice'>
+              <tr ng-repeat="die in fate.dice">
+                <td class='die'>{{die}}</td>
+              </tr>
+            </table>
+            {{ fate.result }}
           </td>
           <td> &nbsp; </td>
           <td rowspan=2 align='right'>

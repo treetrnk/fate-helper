@@ -46,6 +46,7 @@ angular.module('fateHelper', [])
       '-4': "Disastrous"
     };
 
+    $fate.dice = [];
 
      /////////////////////
     //    FUNCTIONS    //
@@ -64,10 +65,22 @@ angular.module('fateHelper', [])
       var options = [-1, 0, 1];
       var counter = 0;
       var outcome = 0;
+      $fate.dice = [];
       while (counter < 4) {
-        outcome += options[Math.floor(Math.random()*options.length)];
+        var roll = options[Math.floor(Math.random()*options.length)];
+        outcome += roll;
         counter += 1;
+        if (roll == '-1') {
+          $fate.dice.push('&#8120;');
+        } else if (roll == '0') {
+          $fate.dice.push('&nbsp;');
+        } else {
+          $fate.dice.push('+');
+        };
       };
+
+      console.log($fate.dice);
+
       if (outcome > -1) {
         $fate.result = "+" + outcome;
       } else {
@@ -75,7 +88,7 @@ angular.module('fateHelper', [])
       };
 
       $fate.result += " " + $fate.ladder[outcome];
-      console.log(result);
+      console.log($fate.result);
       return;
     };
 

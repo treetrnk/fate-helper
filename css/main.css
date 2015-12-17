@@ -188,3 +188,22 @@ div {
   width: 100%;
   padding: 5px;
 }
+.dice {
+  display: inline;
+}
+.die {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  font-size: 14pt;
+  font-weight: normal;
+  line-height: 15px;
+  background: #15598F;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  text-align: center;
+  box-shadow: 2px 2px 4px #111;
+  vertical-align: top;
+}
+
+/* #1B75BC 0px, #15598F 100%); */
