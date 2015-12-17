@@ -87,8 +87,8 @@
             <div class='content' ng-hide="card.hide['aspects']['hide']">
               <form ng-submit='fate.removeAspect(card, $index)'>
                 <span ng-repeat="aspect in card['aspects']">
-                <b>{{aspect['name']}}</b> {{aspect['type']}}
-                <input type='submit' class='btn del-btn right' value='-' /><br />
+                  <b>{{aspect['name']}}</b> {{aspect['type']}} {{aspect['notes']}}
+                <input type='submit' class='btn del-btn right' value='-' />
               </form>
               </span>
               <form ng-submit='fate.addAspect(card)'>
@@ -96,7 +96,10 @@
                   <option selected value=''></option>
                   <option value='(Sit.)'>Sit.</option>
                 </select>
-                <input type='text' placeholder='Add a new aspect' ng-model='card.aspectName' />
+                <input type='text' size=10 placeholder='Aspect Name' 
+                  ng-model='card.aspectName' />
+                <input type='text' size=10 placeholder='Notes' 
+                  ng-model='card.aspectNotes' />
                 <input type='submit' class='btn add-btn right' value='+' />
               </form>
               <br />

@@ -89,8 +89,13 @@ angular.module('fateHelper', [])
 
     $fate.addAspect = function(card) {
       if (card.aspectName.length) {
-        card.aspects.push({type: card.aspectType, name: card.aspectName});
+        card.aspects.push({
+          type: card.aspectType, 
+          name: card.aspectName,
+          notes: card.aspectNotes
+        });
         card.aspectName = '';
+        card.aspectNotes = '';
         card.aspectType = '';
       };
     };
