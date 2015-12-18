@@ -22,6 +22,13 @@ angular.module('fateHelper', [])
 
     $fate.dice = [];
 
+    $fate.page = {
+      PCs: {hide: false},
+      GM: {hide: true},
+      Tools: {hide: true},
+      Help: {hide: true}
+    };
+
      /////////////////////
     //    FUNCTIONS    //
    /////////////////////
@@ -45,6 +52,7 @@ angular.module('fateHelper', [])
         highConcept: '',
         trouble: '',
         aspects: [],
+        image: '',
         skills: [],
         stunts: [],
         extras: 'List of extras',
@@ -56,7 +64,10 @@ angular.module('fateHelper', [])
           {level: 6, text: ''}
         ],
         hide:  { 
-          name: false,
+          name: true,
+          image: false,
+          highConcept: true,
+          trouble: true,
           aspects: {hide: true, arrow: "\u25b2"},
           skills: {hide: true, arrow: "\u25b2"},
           stunts: {hide: true, arrow: "\u25b2"},
@@ -106,6 +117,12 @@ angular.module('fateHelper', [])
       return;
     };
 
+//////  EDIT  //////
+
+    $fate.edit = function(card, item) {
+      card.hide[item] = !card.hide[item];
+    };
+
 //////  TOGGLE HEADINGS  //////
 
     $fate.toggle = function(card, category) {
@@ -118,6 +135,14 @@ angular.module('fateHelper', [])
       console.log(category);
       console.log(card.hide[category]);
       return;
+    };
+
+//////  ADD IMAGE  //////
+
+    $fate.addImage = function(card) {
+      card.image = card.cardImage;
+      $fate.edit(card, 'image');
+      console.log(card.image);
     };
 
 //////  ADD ASPECCT  //////
@@ -171,9 +196,6 @@ angular.module('fateHelper', [])
 
     $fate.removeStunt = function(card, index) {
       card.stunts.splice(index, 1);
-    };
-
-    $fate.edit = function(index) {
     };
 
     $fate.addCard();

@@ -51,6 +51,10 @@ div {
 .left {
   float: left;
 }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 .white {
   color: #fff;
 }
@@ -92,6 +96,12 @@ div {
   font-weight: bold;
 }
 .char-img {
+  width: 85px;
+  height: 85px;
+  border: solid 1px #aaa;
+  text-align: center;
+}
+.char-img img {
   width: 85px;
   height: 85px;
 }

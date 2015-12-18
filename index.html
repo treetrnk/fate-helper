@@ -17,11 +17,14 @@
           <td> &nbsp; </td>
           <td class='dice-roller'>
             <input type='submit' value='Roll Dice' ng-click='fate.rollDice()' />
+            <span class='die' ng-repeat="die in fate.dice">{{die}}</span>
+            <!---
             <table class='dice'>
-              <tr ng-repeat="die in fate.dice">
+              <tr ng-repeat="die in $fate.dice">
                 <td class='die'>{{die}}</td>
               </tr>
             </table>
+            --->
             {{ fate.result }}
           </td>
           <td> &nbsp; </td>
@@ -52,32 +55,51 @@
           ---->
 
           <div class='character-card' ng-repeat='card in fate.cards'>
-            <img src='' class='right char-img' />
+            <div class='right char-img'>
+              <img src="{{cardImage}}" ng-click="fate.edit(card, 'image')" 
+                ng-hide="!card.hide['image']" />
+              <form ng-submit="fate.edit(card, 'image')" 
+                ng-hide="card.hide['image']">
+                <input type='text' size=7 class='center' 
+                  style='margin-top:25px;' placeholder='Image Path' 
+                  ng-model="cardImage" /><br />
+                <input type='submit' class='btn add-btn' value='+' /><br />
+              </form>
+            </div>
+
             <div style='position: relative; width: 0px; height: 0px;'>
               <input type='button' class='btn del-btn big-del-btn' value='-'
                 ng-click="fate.removeCard($index)" />
             </div>
-            <span class='heading blue name' ng-click='card.edit($index)' 
-              ng-hide="card['hide']['name']">{{ card['name'] }}</span>
-            <form ng-submit='card.update()' ng-hide='true'>
-              <input type='text' placeholder='Enter a name' ng-model='cardName' 
-                ng-hide="card['hide']['name']" />
-              <input type='submit' class='btn add-btn right' value='+' /><br />
-            </form>
 
+            <span class='heading blue name' ng-click="fate.edit(card, 'name')" 
+              ng-hide="card.hide['name']">{{ formCardName }}</span>
 
-            <!---<input type='button' class='btn edit-btn' value='&#8230;' />--->
-            <br />
-            <form ng-submit='' ng-hide=''>
-              <b>HC:</b> <span ng-hide=''>{{ card['highConcept'] }}</span> 
-              <input type='text' value="{{card['highConcept']}}" 
-                placeholder='High Concept' />
+            <form ng-submit="fate.edit(card, 'name')" 
+              ng-hide="!card.hide['name']">
+              <input type='text' placeholder='Name' ng-model='formCardName' />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
 
-            <form ng-submit='' ng-hide=''>
-              <b>T:</b> <span ng-hide=''>{{ card['trouble'] }}</span> 
-              <input type='text' value="{{card['trouble']}}" placeholder='Trouble' />
+            <span ng-hide="card.hide['highConcept']" 
+              ng-click="fate.edit(card, 'highConcept')" >
+              <b>HC:</b> {{ formHC }}
+            </span> 
+
+            <form ng-submit="fate.edit(card, 'highConcept')" 
+              ng-hide="!card.hide['highConcept']">
+              <input type='text' placeholder='High Concept' ng-model="formHC" />
+              <input type='submit' class='btn add-btn right' value='+' />
+            </form>
+
+            <span ng-click="fate.edit(card, 'trouble')"
+              ng-hide="card.hide['trouble']">
+              <b>T:</b> {{ formTrouble }}
+            </span> 
+
+            <form ng-submit="fate.edit(card, 'trouble')" 
+              ng-hide="!card.hide['trouble']">
+              <input type='text' placeholder='Trouble' ng-model="formTrouble" />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
             <br />
@@ -250,9 +272,9 @@
                 <option>9</option>
                 <option>8 Ext</option>
                 <option>7</option>
-                <option>6 Maj</option>
+                <option>6 Sev</option>
                 <option>5</option>
-                <option>4 Sig</option>
+                <option>4 Mod</option>
                 <option>3</option>
                 <option selected>2 Min</option>
                 <option>1</option>
