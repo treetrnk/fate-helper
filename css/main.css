@@ -74,8 +74,11 @@ div {
   margin: 5px;
   border: solid 2px #999;
 }
+.card-heading {
+  height: 125px;
+}
 .attributes {
-  height: calc(100% - 135px);
+  height: calc(100% - 125px);
   overflow-y: auto;
 }
 .category {
@@ -121,7 +124,7 @@ div {
   background: #009900;
 }
 .edit-btn {
-  background: #000099;
+  background: #15598F;
 }
 .del-btn {
   background: #990000;
