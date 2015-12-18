@@ -64,16 +64,16 @@ angular.module('fateHelper', [])
           {level: 6, text: ''}
         ],
         hide:  { 
-          name: true,
-          image: false,
-          highConcept: true,
-          trouble: true,
-          aspects: {hide: true, arrow: "\u25b2"},
-          skills: {hide: true, arrow: "\u25b2"},
-          stunts: {hide: true, arrow: "\u25b2"},
-          extras: {hide: true, arrow: "\u25b2"},
-          stress: {hide: true, arrow: "\u25b2"},
-          consequences: {hide: true, arrow: "\u25b2"}
+          name: {content: true},
+          image: {content: false},
+          highConcept: {content: true},
+          trouble: {content: true},
+          aspects: {tab: true, arrow: "\u25b2"},
+          skills: {tab: true, arrow: "\u25b2"},
+          stunts: {tab: true, arrow: "\u25b2"},
+          extras: {content: true, tab: true, arrow: "\u25b2"},
+          stress: {tab: true, arrow: "\u25b2"},
+          consequences: {tab: true, arrow: "\u25b2"}
         }
       });
     };
@@ -120,13 +120,13 @@ angular.module('fateHelper', [])
 //////  EDIT  //////
 
     $fate.edit = function(card, item) {
-      card.hide[item] = !card.hide[item];
+      card.hide[item]['content'] = !card.hide[item]['content'];
     };
 
 //////  TOGGLE HEADINGS  //////
 
     $fate.toggle = function(card, category) {
-      card.hide[category]['hide'] = !card.hide[category]['hide'];
+      card.hide[category]['tab'] = !card.hide[category]['tab'];
       if (card.hide[category]['arrow'] == "\u25b2") {
         card.hide[category]['arrow'] = "\u25bc";
       } else {

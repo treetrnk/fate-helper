@@ -57,9 +57,9 @@
           <div class='character-card' ng-repeat='card in fate.cards'>
             <div class='right char-img'>
               <img src="{{cardImage}}" ng-click="fate.edit(card, 'image')" 
-                ng-hide="!card.hide['image']" />
+                ng-hide="!card.hide['image']['content']" />
               <form ng-submit="fate.edit(card, 'image')" 
-                ng-hide="card.hide['image']">
+                ng-hide="card.hide['image']['content']">
                 <input type='text' size=7 class='center' 
                   style='margin-top:25px;' placeholder='Image Path' 
                   ng-model="cardImage" /><br />
@@ -73,32 +73,37 @@
             </div>
 
             <span class='heading blue name' ng-click="fate.edit(card, 'name')" 
-              ng-hide="card.hide['name']">{{ formCardName }}</span>
+              ng-hide="card.hide['name']['content']">
+              {{ formCardName }}
+              <input type='submit' class='btn add-btn right' value='+' /><br />
+            </span>
 
             <form ng-submit="fate.edit(card, 'name')" 
-              ng-hide="!card.hide['name']">
+              ng-hide="!card.hide['name']['content']">
               <input type='text' placeholder='Name' ng-model='formCardName' />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
 
-            <span ng-hide="card.hide['highConcept']" 
-              ng-click="fate.edit(card, 'highConcept')" >
+            <span ng-click="fate.edit(card, 'highConcept')" 
+              ng-hide="card.hide['highConcept']['content']">
               <b>HC:</b> {{ formHC }}
+              <input type='submit' class='btn add-btn right' value='+' /><br />
             </span> 
 
             <form ng-submit="fate.edit(card, 'highConcept')" 
-              ng-hide="!card.hide['highConcept']">
+              ng-hide="!card.hide['highConcept']['content']">
               <input type='text' placeholder='High Concept' ng-model="formHC" />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
 
             <span ng-click="fate.edit(card, 'trouble')"
-              ng-hide="card.hide['trouble']">
+              ng-hide="card.hide['trouble']['content']">
               <b>T:</b> {{ formTrouble }}
+              <input type='submit' class='btn add-btn right' value='+' /><br />
             </span> 
 
             <form ng-submit="fate.edit(card, 'trouble')" 
-              ng-hide="!card.hide['trouble']">
+              ng-hide="!card.hide['trouble']['content']">
               <input type='text' placeholder='Trouble' ng-model="formTrouble" />
               <input type='submit' class='btn add-btn right' value='+' />
             </form>
@@ -117,7 +122,7 @@
 
             </div>
 
-            <div class='content' ng-hide="card.hide['aspects']['hide']">
+            <div class='content' ng-hide="card.hide['aspects']['tab']">
               <span ng-repeat="aspect in card['aspects']">
                 <form ng-submit='fate.removeAspect(card, $index)'>
                   <b>{{aspect['name']}}</b> {{aspect['type']}} {{aspect['notes']}}
@@ -147,7 +152,7 @@
               <span class='heading blue'>Skills</span><br />
             </div>
 
-            <div class='content' ng-hide="card.hide['skills']['hide']">
+            <div class='content' ng-hide="card.hide['skills']['tab']">
               <span ng-repeat='skill in card.skills'>
                 <form ng-submit="fate.removeSkill(card, $index)">
                   <b>{{skill.level}}</b>  - {{skill.name}}
@@ -187,7 +192,7 @@
               <span class='heading blue'>Stunts</span><br />
             </div>
 
-            <div class='content' ng-hide="card.hide['stunts']['hide']">
+            <div class='content' ng-hide="card.hide['stunts']['tab']">
               <span ng-repeat='stunt in card.stunts'>
                 <form ng-submit='fate.removeStunt(card, $index)'>
                   <b>{{stunt.name}}</b>: {{stunt.description}}
@@ -213,8 +218,20 @@
               <span class='heading blue'>Extras</span><br />
             </div>
 
-            <div class='content' ng-hide="card.hide['extras']['hide']">
-              {{card.extras}}
+            <div class='content' ng-hide="card.hide['extras']['tab']">
+              <span ng-click="fate.edit(card, 'extras')" 
+                ng-hide="card.hide['extras']['content']">
+                {{ formExtras }}
+              <input type='submit' class='btn add-btn right' value='+' /><br />
+              </span>
+              
+              <form ng-submit="fate.edit(card, 'extras')" 
+                ng-hide="!card.hide['extras']['content']">
+                <textarea placeholder="Extras" cols=40 rows=5 
+                  ng-model="formExtras">
+                </textarea>
+                <input type='submit' class='btn add-btn right' value='+' /><br />
+              </form>
               <br /><br />
             </div>
 
@@ -227,7 +244,7 @@
               <span class='heading blue'>Stress</span><br />
             </div>
 
-            <div class='content' ng-hide="card.hide['stress']['hide']">
+            <div class='content' ng-hide="card.hide['stress']['tab']">
               <table class='stress-table'>
                 <tr>
                   <th width="50%">
@@ -266,7 +283,7 @@
               <span class='heading blue'>Consequences</span><br />
             </div>
 
-            <div class='content' ng-hide="card.hide['consequences']['hide']">
+            <div class='content' ng-hide="card.hide['consequences']['tab']">
               <select>
                 <option>10</option>
                 <option>9</option>
