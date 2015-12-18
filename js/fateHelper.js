@@ -2,33 +2,7 @@ angular.module('fateHelper', [])
   .controller('FateController', function() {
     var $fate = this;
     
-    $fate.cards = [
-      {
-        name: 'Name',
-        highConcept: '',
-        trouble: '',
-        aspects: [],
-        skills: [],
-        stunts: [],
-        extras: 'List of extras',
-        pStress: 3,
-        mStress: 3,
-        consequences: [
-          {level: 2, text: ''}, 
-          {level: 4, text: ''}, 
-          {level: 6, text: ''}
-        ],
-        hide:  { 
-          name: false,
-          aspects: {hide: true, arrow: "\u25b2"},
-          skills: {hide: true, arrow: "\u25b2"},
-          stunts: {hide: true, arrow: "\u25b2"},
-          extras: {hide: true, arrow: "\u25b2"},
-          stress: {hide: true, arrow: "\u25b2"},
-          consequences: {hide: true, arrow: "\u25b2"}
-        }
-      }
-    ];
+    $fate.cards = [];
 
     $fate.ladder = {
       '8': "Legendary",
@@ -52,6 +26,8 @@ angular.module('fateHelper', [])
     //    FUNCTIONS    //
    /////////////////////
 
+//////  SLEEP  //////
+
     function sleep(milliseconds) {
       var start = new Date().getTime();
         for (var i = 0; i < 1e7; i++) {
@@ -60,6 +36,44 @@ angular.module('fateHelper', [])
         };
       };
     };
+
+//////  ADD CARD  //////
+
+    $fate.addCard = function() {
+      $fate.cards.push({
+        name: '',
+        highConcept: '',
+        trouble: '',
+        aspects: [],
+        skills: [],
+        stunts: [],
+        extras: 'List of extras',
+        pStress: 3,
+        mStress: 3,
+        consequences: [
+          {level: 2, text: ''}, 
+          {level: 4, text: ''}, 
+          {level: 6, text: ''}
+        ],
+        hide:  { 
+          name: false,
+          aspects: {hide: true, arrow: "\u25b2"},
+          skills: {hide: true, arrow: "\u25b2"},
+          stunts: {hide: true, arrow: "\u25b2"},
+          extras: {hide: true, arrow: "\u25b2"},
+          stress: {hide: true, arrow: "\u25b2"},
+          consequences: {hide: true, arrow: "\u25b2"}
+        }
+      });
+    };
+
+//////  REMOVE CARD  //////
+
+    $fate.removeCard = function(index) {
+      $fate.cards.splice(index, 1);
+    };
+
+//////  ROLL DICE  //////
 
     $fate.rollDice = function() {
       var options = [-1, 0, 1];
@@ -92,6 +106,8 @@ angular.module('fateHelper', [])
       return;
     };
 
+//////  TOGGLE HEADINGS  //////
+
     $fate.toggle = function(card, category) {
       card.hide[category]['hide'] = !card.hide[category]['hide'];
       if (card.hide[category]['arrow'] == "\u25b2") {
@@ -103,6 +119,8 @@ angular.module('fateHelper', [])
       console.log(card.hide[category]);
       return;
     };
+
+//////  ADD ASPECCT  //////
 
     $fate.addAspect = function(card) {
       if (card.aspectName.length) {
@@ -117,9 +135,13 @@ angular.module('fateHelper', [])
       };
     };
 
+//////  REMOVE ASPECT  //////
+
     $fate.removeAspect = function(card, index) {
       card.aspects.splice(index, 1);
     };
+
+//////  ADD SKILL  //////
 
     $fate.addSkill = function(card) {
       if (card.skillName.length && card.skillLevel.length) {
@@ -129,9 +151,13 @@ angular.module('fateHelper', [])
       };
     };
 
+//////  REMOVE SKILL  //////
+
     $fate.removeSkill = function(card, index) {
       card.skills.splice(index, 1);
     };
+
+//////  ADD STUNT  //////
 
     $fate.addStunt = function(card) {
       if (card.stuntDescription.length && card.stuntName.length) {
@@ -141,43 +167,15 @@ angular.module('fateHelper', [])
       };
     };
 
+//////  REMOVE STUNT  //////
+
     $fate.removeStunt = function(card, index) {
       card.stunts.splice(index, 1);
     };
 
-    $fate.addCard = function() {
-      $fate.cards.push({
-        name: '',
-        highConcept: '',
-        trouble: '',
-        aspects: [],
-        skills: [],
-        stunts: [],
-        extras: 'List of extras',
-        pStress: 3,
-        mStress: 3,
-        consequences: [
-          {level: 2, text: ''}, 
-          {level: 4, text: ''}, 
-          {level: 6, text: ''}
-        ],
-        hide:  { 
-          name: false,
-          aspects: {hide: true, arrow: "\u25b2"},
-          skills: {hide: true, arrow: "\u25b2"},
-          stunts: {hide: true, arrow: "\u25b2"},
-          extras: {hide: true, arrow: "\u25b2"},
-          stress: {hide: true, arrow: "\u25b2"},
-          consequences: {hide: true, arrow: "\u25b2"}
-        }
-      });
-    };
-
-    $fate.removeCard = function(index) {
-      $fate.cards.splice(index, 1);
-    };
-
     $fate.edit = function(index) {
     };
+
+    $fate.addCard();
 
   });
