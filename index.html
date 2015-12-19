@@ -64,7 +64,7 @@
                 <form ng-submit="fate.edit(card, 'image')" 
                   ng-hide="card.hide['image']['content']">
                   <input type='text' size=7 class='center' 
-                    style='margin-top:25px;' placeholder='Image Path' 
+                    style='margin-top:25px;' placeholder='Image URL' 
                     ng-model="cardImage" /><br />
                   <input type='submit' class='btn add-btn' value='+' /><br />
                 </form>
@@ -78,7 +78,7 @@
               <span class='heading blue name' ng-click="fate.edit(card, 'name')" 
                 ng-hide="card.hide['name']['content']">
                 {{ formCardName }}
-                <input type='submit' class='btn edit-btn right' value='&hellip; ' /><br />
+                <input type='submit' class='btn edit-btn right' value='~' /><br />
               </span>
 
               <form ng-submit="fate.edit(card, 'name')" 
@@ -90,7 +90,7 @@
               <span ng-click="fate.edit(card, 'highConcept')" 
                 ng-hide="card.hide['highConcept']['content']">
                 <b>HC:</b> {{ formHC }}
-                <input type='submit' class='btn edit-btn right' value='&hellip; ' /><br />
+                <input type='submit' class='btn edit-btn right' value='~' /><br />
               </span> 
 
               <form ng-submit="fate.edit(card, 'highConcept')" 
@@ -102,7 +102,7 @@
               <span ng-click="fate.edit(card, 'trouble')"
                 ng-hide="card.hide['trouble']['content']">
                 <b>T:</b> {{ formTrouble }}
-                <input type='submit' class='btn edit-btn right' value='&hellip; ' /><br />
+                <input type='submit' class='btn edit-btn right' value='~' /><br />
               </span> 
 
               <form ng-submit="fate.edit(card, 'trouble')" 
@@ -224,7 +224,7 @@
               <span ng-click="fate.edit(card, 'extras')" 
                 ng-hide="card.hide['extras']['content']">
                 {{ formExtras }}
-              <input type='submit' class='btn edit-btn right' value='&hellip; ' /><br />
+              <input type='submit' class='btn edit-btn right' value='~' /><br />
               </span>
               
               <form ng-submit="fate.edit(card, 'extras')" 
@@ -234,7 +234,7 @@
                 </textarea>
                 <input type='submit' class='btn add-btn right' value='+' /><br />
               </form>
-              <br /><br />
+              <br />
             </div>
 
             <!----
