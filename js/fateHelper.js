@@ -147,23 +147,52 @@ angular.module('fateHelper', [])
 
 //////  ADD ASPECCT  //////
 
-    $fate.addAspect = function(card) {
-      if (card.aspectName.length) {
-        card.aspects.push({
-          type: card.aspectType, 
-          name: card.aspectName,
-          notes: card.aspectNotes
-        });
-        card.aspectName = '';
-        card.aspectNotes = '';
-        card.aspectType = '';
-      };
+    $fate.addAttribute = function(card, attribute) {
+      switch (attribute) {
+        case 'aspects': case 'consequences':
+          card.aspects.push({
+            type: '', 
+            name: '',
+            notes: ''
+          });
+          break;
+        case 'skills':
+          card.skills.push({
+            name: '',
+            level: ''
+          });
+          break;
+        case 'stunts':
+          card.stunts.push({
+            name: '',
+            description: ''
+          });
+          break;
+        case 'pstress':
+          card.pstress.push({
+            level: card.pstress.length + 1
+          });
+          break;
+        case 'mstress':
+          card.mstress.push({
+            level: card.mstress.length + 1
+          });
+          break;
+        case 'consequences':
+          card.consequences.push({
+            type: '', 
+            name: '',
+            notes: ''
+          });
+          break;
+      }; 
     };
+
 
 //////  REMOVE ASPECT  //////
 
-    $fate.removeAspect = function(card, index) {
-      card.aspects.splice(index, 1);
+    $fate.removeAttribute = function(card, index, attribute) {
+      card[attribute].splice(index, 1);
     };
 
 //////  ADD SKILL  //////
