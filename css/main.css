@@ -220,4 +220,21 @@ div {
   vertical-align: top;
 }
 
+input[type="text"] {
+  border: 0px;
+  border-bottom: 1px solid #000;
+  font-family: Arial;
+  background: #eee;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.large {
+  font-size: 14pt;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 /* #1B75BC 0px, #15598F 100%); */

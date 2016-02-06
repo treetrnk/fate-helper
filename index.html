@@ -63,7 +63,7 @@
                   ng-hide="!card.hide['image']['content']" />
                 <form ng-submit="fate.edit(card, 'image')" 
                   ng-hide="card.hide['image']['content']">
-                  <input type='text' size=7 class='center' 
+                  <input type='text' size=6 class='center' 
                     style='margin-top:25px;' placeholder='Image URL' 
                     ng-model="cardImage" /><br />
                   <input type='submit' class='btn add-btn' value='+' /><br />
@@ -75,41 +75,10 @@
                   ng-click="fate.removeCard($index)" />
               </div>
 
-              <span class='heading blue name' ng-click="fate.edit(card, 'name')" 
-                ng-hide="card.hide['name']['content']">
-                {{ formCardName }}
-                <input type='submit' class='btn edit-btn right' value='&hellip;' /><br />
-              </span>
+              <input type='text' placeholder='Name' ng-model='formCardName' class='large bold' />
+              <input type='text' placeholder='High Concept' ng-model="formHC" size=28 />
+              <input type='text' placeholder='Trouble' ng-model="formTrouble" size=28 />
 
-              <form ng-submit="fate.edit(card, 'name')" 
-                ng-hide="!card.hide['name']['content']">
-                <input type='text' placeholder='Name' ng-model='formCardName' />
-                <input type='submit' class='btn add-btn right' value='+' />
-              </form>
-
-              <span ng-click="fate.edit(card, 'highConcept')" 
-                ng-hide="card.hide['highConcept']['content']">
-                <b>HC:</b> {{ formHC }}
-                <input type='submit' class='btn edit-btn right' value='&hellip;' /><br />
-              </span> 
-
-              <form ng-submit="fate.edit(card, 'highConcept')" 
-                ng-hide="!card.hide['highConcept']['content']">
-                <input type='text' placeholder='High Concept' ng-model="formHC" />
-                <input type='submit' class='btn add-btn right' value='+' />
-              </form>
-
-              <span ng-click="fate.edit(card, 'trouble')"
-                ng-hide="card.hide['trouble']['content']">
-                <b>T:</b> {{ formTrouble }}
-                <input type='submit' class='btn edit-btn right' value='&hellip;' /><br />
-              </span> 
-
-              <form ng-submit="fate.edit(card, 'trouble')" 
-                ng-hide="!card.hide['trouble']['content']">
-                <input type='text' placeholder='Trouble' ng-model="formTrouble" />
-                <input type='submit' class='btn add-btn right' value='+' />
-              </form>
             </div>
 
             <!----
@@ -137,12 +106,12 @@
                     <select ng-model="aspectType.$index">
                       <option selected value=''></option>
                       <option value='(Sit.)'>Sit.</option>
+                      <option value='(Bst.)'>Bst.</option>
                     </select>
-                    <input type='text' size=10 placeholder='Aspect name' 
-                      ng-model='aspectName[i]' />
-                    <input type='text' size=10 placeholder='Notes' 
+                    <input type='text' size=30 placeholder='Aspect name' 
+                      ng-model='aspectName[i]' class="bold" />
+                    <input type='text' size=40 paceholder='Notes' 
                       ng-model='aspectNotes[i]' />
-                    <input type='submit' class='btn add-btn right' value='+' />
                   </form>
 
                 </span>
@@ -212,9 +181,9 @@
                 </span>
                 <form ng-submit='fate.addStunt(card)'>
                   <input type='text' placeholder='Stunt name' 
-                    ng-model='card.stuntName' size=10 />
+                    ng-model='card.stuntName' size=9 />
                   <input type='text' placeholder='Stunt description' 
-                    ng-model='card.stuntDescription' size=15 />
+                    ng-model='card.stuntDescription' size=14 />
                   <input type='submit' class='btn add-btn right' value='+' /><br />
                 </form>
                 <br />
@@ -307,8 +276,8 @@
                   <option selected>2 Minor</option>
                   <option>1</option>
                 </select>
-                <input type="text" size=9 placeholder="Consequence" />
-                <input type="text" size=9 placeholder="Notes" />
+                <input type="text" size=8 placeholder="Consequence" />
+                <input type="text" size=8 placeholder="Notes" />
                 <input type='button' class='btn add-btn right' value='+' />
                 <br /><br />
               </div>
